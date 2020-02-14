@@ -33,20 +33,13 @@
             this.newToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.assetBackupToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.modelBackupToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.cDriveOnlyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.assetToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.modelToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.restoreToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.fromAssetToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.fromModelImageToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.cDriveOnlyToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.assetToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.modelToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.manualToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.ReturnDirectory = new System.Windows.Forms.OpenFileDialog();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -59,7 +52,7 @@
             this.helpToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(974, 42);
+            this.menuStrip1.Size = new System.Drawing.Size(974, 40);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -70,60 +63,37 @@
             this.restoreToolStripMenuItem,
             this.exitToolStripMenuItem});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-            this.fileToolStripMenuItem.Size = new System.Drawing.Size(72, 38);
+            this.fileToolStripMenuItem.Size = new System.Drawing.Size(72, 36);
             this.fileToolStripMenuItem.Text = "&File";
             // 
             // newToolStripMenuItem
             // 
             this.newToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.assetBackupToolStripMenuItem,
-            this.modelBackupToolStripMenuItem,
-            this.cDriveOnlyToolStripMenuItem});
+            this.modelBackupToolStripMenuItem});
             this.newToolStripMenuItem.Name = "newToolStripMenuItem";
-            this.newToolStripMenuItem.Size = new System.Drawing.Size(271, 44);
+            this.newToolStripMenuItem.Size = new System.Drawing.Size(359, 44);
             this.newToolStripMenuItem.Text = "&Backup";
             // 
             // assetBackupToolStripMenuItem
             // 
             this.assetBackupToolStripMenuItem.Name = "assetBackupToolStripMenuItem";
-            this.assetBackupToolStripMenuItem.Size = new System.Drawing.Size(302, 44);
+            this.assetBackupToolStripMenuItem.Size = new System.Drawing.Size(359, 44);
             this.assetBackupToolStripMenuItem.Text = "&Asset Backup";
             this.assetBackupToolStripMenuItem.Click += new System.EventHandler(this.AddAsset);
             // 
             // modelBackupToolStripMenuItem
             // 
             this.modelBackupToolStripMenuItem.Name = "modelBackupToolStripMenuItem";
-            this.modelBackupToolStripMenuItem.Size = new System.Drawing.Size(302, 44);
+            this.modelBackupToolStripMenuItem.Size = new System.Drawing.Size(359, 44);
             this.modelBackupToolStripMenuItem.Text = "&Model Backup";
             this.modelBackupToolStripMenuItem.Click += new System.EventHandler(this.AddModel);
-            // 
-            // cDriveOnlyToolStripMenuItem
-            // 
-            this.cDriveOnlyToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.assetToolStripMenuItem,
-            this.modelToolStripMenuItem});
-            this.cDriveOnlyToolStripMenuItem.Name = "cDriveOnlyToolStripMenuItem";
-            this.cDriveOnlyToolStripMenuItem.Size = new System.Drawing.Size(302, 44);
-            this.cDriveOnlyToolStripMenuItem.Text = "&C Drive only";
-            // 
-            // assetToolStripMenuItem
-            // 
-            this.assetToolStripMenuItem.Name = "assetToolStripMenuItem";
-            this.assetToolStripMenuItem.Size = new System.Drawing.Size(218, 44);
-            this.assetToolStripMenuItem.Text = "Asset";
-            // 
-            // modelToolStripMenuItem
-            // 
-            this.modelToolStripMenuItem.Name = "modelToolStripMenuItem";
-            this.modelToolStripMenuItem.Size = new System.Drawing.Size(218, 44);
-            this.modelToolStripMenuItem.Text = "Model";
             // 
             // restoreToolStripMenuItem
             // 
             this.restoreToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.fromAssetToolStripMenuItem,
-            this.fromModelImageToolStripMenuItem,
-            this.cDriveOnlyToolStripMenuItem1});
+            this.fromModelImageToolStripMenuItem});
             this.restoreToolStripMenuItem.Name = "restoreToolStripMenuItem";
             this.restoreToolStripMenuItem.Size = new System.Drawing.Size(359, 44);
             this.restoreToolStripMenuItem.Text = "&Restore";
@@ -131,7 +101,7 @@
             // fromAssetToolStripMenuItem
             // 
             this.fromAssetToolStripMenuItem.Name = "fromAssetToolStripMenuItem";
-            this.fromAssetToolStripMenuItem.Size = new System.Drawing.Size(353, 44);
+            this.fromAssetToolStripMenuItem.Size = new System.Drawing.Size(359, 44);
             this.fromAssetToolStripMenuItem.Text = "&From Asset Image";
             this.fromAssetToolStripMenuItem.Click += new System.EventHandler(this.RestoreAsset);
             // 
@@ -142,32 +112,11 @@
             this.fromModelImageToolStripMenuItem.Text = "&From Model Image";
             this.fromModelImageToolStripMenuItem.Click += new System.EventHandler(this.RestoreModel);
             // 
-            // cDriveOnlyToolStripMenuItem1
-            // 
-            this.cDriveOnlyToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.assetToolStripMenuItem1,
-            this.modelToolStripMenuItem1});
-            this.cDriveOnlyToolStripMenuItem1.Name = "cDriveOnlyToolStripMenuItem1";
-            this.cDriveOnlyToolStripMenuItem1.Size = new System.Drawing.Size(353, 44);
-            this.cDriveOnlyToolStripMenuItem1.Text = "C Drive Only";
-            // 
-            // assetToolStripMenuItem1
-            // 
-            this.assetToolStripMenuItem1.Name = "assetToolStripMenuItem1";
-            this.assetToolStripMenuItem1.Size = new System.Drawing.Size(218, 44);
-            this.assetToolStripMenuItem1.Text = "Asset";
-            // 
-            // modelToolStripMenuItem1
-            // 
-            this.modelToolStripMenuItem1.Name = "modelToolStripMenuItem1";
-            this.modelToolStripMenuItem1.Size = new System.Drawing.Size(218, 44);
-            this.modelToolStripMenuItem1.Text = "Model";
-            // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
             this.exitToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.F4)));
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(271, 44);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(359, 44);
             this.exitToolStripMenuItem.Text = "&Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.OnExit);
             // 
@@ -192,10 +141,6 @@
             this.manualToolStripMenuItem.Size = new System.Drawing.Size(229, 44);
             this.manualToolStripMenuItem.Text = "&Manual";
             // 
-            // ReturnDirectory
-            // 
-            this.ReturnDirectory.FileOk += new System.ComponentModel.CancelEventHandler(this.ReturnDirectory_FileOk);
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
@@ -219,7 +164,6 @@
         private System.Windows.Forms.ToolStripMenuItem newToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem assetBackupToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem modelBackupToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem cDriveOnlyToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem restoreToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem fromAssetToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem fromModelImageToolStripMenuItem;
@@ -227,12 +171,6 @@
         private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem manualToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem assetToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem modelToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem cDriveOnlyToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem assetToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem modelToolStripMenuItem1;
-        internal System.Windows.Forms.OpenFileDialog ReturnDirectory;
     }
 }
 

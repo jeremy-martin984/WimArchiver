@@ -41,7 +41,8 @@ namespace WimArchiver
 
         private void RestoreAsset(object sender, EventArgs e)
         {
-            DialogResult = ReturnDirectory.ShowDialog();
+            RestoreAssetForm asset = new RestoreAssetForm();
+            asset.ShowDialog(this);
         }
 
         private void ReturnDirectory_FileOk(object sender, CancelEventArgs e)

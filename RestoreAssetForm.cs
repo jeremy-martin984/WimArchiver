@@ -10,24 +10,27 @@ using System.Windows.Forms;
 
 namespace WimArchiver
 {
-    public partial class RestoreModelForm : Form
+    public partial class RestoreAssetForm : Form
     {
-        public RestoreModelForm()
+        public RestoreAssetForm()
         {
-
             InitializeComponent();
         }
-        
+
         private void OnOK(object sender, EventArgs e)
         {
-
             Close();
-            //TODO:Something, database query to pre-fill model names
+            //TODO:Something
         }
 
         private void OnCancel(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            DialogResult = ReturnDirectory.ShowDialog();
         }
     }
 }
