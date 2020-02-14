@@ -16,7 +16,6 @@ namespace WimArchiver
         {
             InitializeComponent();
         }
-        Command backup = new Command();
 
         private void AddAsset(object sender, EventArgs e)
         {
@@ -52,7 +51,8 @@ namespace WimArchiver
 
         private void RestoreModel(object sender, EventArgs e)
         {
-            DialogResult = ReturnDirectory.ShowDialog();
+            RestoreModelForm model = new RestoreModelForm();
+            model.ShowDialog(this);
         }
     }
 }
