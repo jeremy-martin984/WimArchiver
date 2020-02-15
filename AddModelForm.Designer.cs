@@ -28,18 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtModelEntry = new System.Windows.Forms.TextBox();
             this.instAsset = new System.Windows.Forms.Label();
             this.btnOK = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // textBox1
+            // txtModelEntry
             // 
-            this.textBox1.Location = new System.Drawing.Point(32, 115);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(433, 31);
-            this.textBox1.TabIndex = 3;
+            this.txtModelEntry.Location = new System.Drawing.Point(32, 115);
+            this.txtModelEntry.Name = "txtModelEntry";
+            this.txtModelEntry.Size = new System.Drawing.Size(433, 31);
+            this.txtModelEntry.TabIndex = 3;
             // 
             // instAsset
             // 
@@ -52,6 +52,7 @@
             // 
             // btnOK
             // 
+            this.btnOK.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.btnOK.Location = new System.Drawing.Point(224, 184);
             this.btnOK.Name = "btnOK";
             this.btnOK.Size = new System.Drawing.Size(105, 41);
@@ -78,7 +79,7 @@
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnOK);
             this.Controls.Add(this.instAsset);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtModelEntry);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "AddModelForm";
@@ -91,7 +92,7 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtModelEntry;
         private System.Windows.Forms.Label instAsset;
         private System.Windows.Forms.Button btnOK;
         private System.Windows.Forms.Button btnCancel;

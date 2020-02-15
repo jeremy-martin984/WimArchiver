@@ -30,7 +30,7 @@
         {
             this.btnOK = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtAssetEntry = new System.Windows.Forms.TextBox();
             this.instAsset = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
@@ -56,12 +56,12 @@
             this.btnCancel.UseVisualStyleBackColor = true;
             this.btnCancel.Click += new System.EventHandler(this.OnCancel);
             // 
-            // textBox1
+            // txtAssetEntry
             // 
-            this.textBox1.Location = new System.Drawing.Point(27, 99);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(433, 31);
-            this.textBox1.TabIndex = 2;
+            this.txtAssetEntry.Location = new System.Drawing.Point(27, 99);
+            this.txtAssetEntry.Name = "txtAssetEntry";
+            this.txtAssetEntry.Size = new System.Drawing.Size(433, 31);
+            this.txtAssetEntry.TabIndex = 2;
             // 
             // instAsset
             // 
@@ -78,7 +78,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(496, 260);
             this.Controls.Add(this.instAsset);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtAssetEntry);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnOK);
             this.MaximizeBox = false;
@@ -95,7 +95,7 @@
 
         private System.Windows.Forms.Button btnOK;
         private System.Windows.Forms.Button btnCancel;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtAssetEntry;
         private System.Windows.Forms.Label instAsset;
     }
 }

@@ -141,5 +141,11 @@
   <ItemGroup>
     <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\WimArchiver.Commands\WimArchiver.Commands.csproj">
+      <Project>{1b88c9e5-e236-4799-8aa2-7fd69509b37e}</Project>
+      <Name>WimArchiver.Commands</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

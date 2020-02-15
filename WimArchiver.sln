@@ -5,6 +5,8 @@ VisualStudioVersion = 16.0.29709.97
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WimArchiver", "WimArchiver.csproj", "{A22F518D-9B13-4DA8-9031-D83251FD825A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WimArchiver.Commands", "..\WimArchiver.Commands\WimArchiver.Commands.csproj", "{1B88C9E5-E236-4799-8AA2-7FD69509B37E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,14 @@ Global
 		{A22F518D-9B13-4DA8-9031-D83251FD825A}.Release|Any CPU.Build.0 = Release|Any CPU
 		{A22F518D-9B13-4DA8-9031-D83251FD825A}.Release|x64.ActiveCfg = Release|x64
 		{A22F518D-9B13-4DA8-9031-D83251FD825A}.Release|x64.Build.0 = Release|x64
+		{1B88C9E5-E236-4799-8AA2-7FD69509B37E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1B88C9E5-E236-4799-8AA2-7FD69509B37E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1B88C9E5-E236-4799-8AA2-7FD69509B37E}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{1B88C9E5-E236-4799-8AA2-7FD69509B37E}.Debug|x64.Build.0 = Debug|Any CPU
+		{1B88C9E5-E236-4799-8AA2-7FD69509B37E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1B88C9E5-E236-4799-8AA2-7FD69509B37E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1B88C9E5-E236-4799-8AA2-7FD69509B37E}.Release|x64.ActiveCfg = Release|Any CPU
+		{1B88C9E5-E236-4799-8AA2-7FD69509B37E}.Release|x64.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
