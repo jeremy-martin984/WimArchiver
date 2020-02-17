@@ -16,8 +16,9 @@ namespace WimArchiver
     {
         public RestoreModelForm()
         {
-
             InitializeComponent();
+            modelBox.Items.AddRange(System.IO.File.ReadAllLines("ModelList.txt"));
+
         }
         
         private void OnOK(object sender, EventArgs e)

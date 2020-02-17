@@ -17,15 +17,44 @@ namespace WimArchiver
         public AddModelForm()
         {
             InitializeComponent();
+            
         }
 
         private void OnOK(object sender, EventArgs e)
         {
-            //TODO:Model database
-            //TODO:Display Confirmation
             var modelFFU = new WimSystemCommand();
-            modelFFU.Model = txtModelEntry.Text;
-            modelFFU.FinalCommand = modelFFU.Base + modelFFU.Model + modelFFU.End + "\"windows\"";
+            string temp = txtModelEntry.Text;
+            temp = temp.Replace(" ", "_");
+            temp = temp.Replace("/", "-");
+            temp = temp.ToUpper();
+            modelFFU.Model = temp;
+            //TODO:Name collision, replacement, true database implementation, text validation
+            //TODO:Warning messages,
+            bool fileExists = false;
+            string[] modelLine = System.IO.File.ReadAllLines("ModelList.txt");
+            if(Array.Exists(modelLine, element => element == temp))
+            {
+                DialogResult result =MessageBox.Show("This model already exists. Do you want to overwrite?", "Image Exists", MessageBoxButtons.YesNo);
+                if (result == DialogResult.No)
+                {
+                    return;
+                }
+                else fileExists = true;
+            }
+            if (!fileExists)
+            {
+                using (System.IO.StreamWriter file = new System.IO.StreamWriter("ModelList.txt", true))
+                {
+                    file.WriteLine(temp);
+                }
+                modelLine = System.IO.File.ReadAllLines("ModelList.txt");
+                Array.Sort(modelLine);
+
+                System.IO.File.WriteAllLines("ModelList.txt", modelLine);
+            }
+        
+
+        modelFFU.FinalCommand = modelFFU.Base + modelFFU.Model + modelFFU.End + "\"windows\"";
             //MessageBox.Show(modelFFU.FinalCommand, "info", MessageBoxButtons.OK, MessageBoxIcon.Information); To see command output
             var FFUCreate = new ProcessStartInfo();
             FFUCreate.UseShellExecute = true;

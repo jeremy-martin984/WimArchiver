@@ -42,15 +42,10 @@
             this.modelBox.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append;
             this.modelBox.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.modelBox.FormattingEnabled = true;
-            this.modelBox.Items.AddRange(new object[] {
-            "test"});
             this.modelBox.Location = new System.Drawing.Point(254, 220);
             this.modelBox.Name = "modelBox";
             this.modelBox.Size = new System.Drawing.Size(367, 33);
             this.modelBox.TabIndex = 0;
-            // 
-            // modelNameListBindingSource
-            // 
             // 
             // instAsset
             // 

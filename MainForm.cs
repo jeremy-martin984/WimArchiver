@@ -14,6 +14,8 @@ namespace WimArchiver
     {
         public MainForm()
         {
+            //TODO:When ran from normally, Handle unattend processing, sysprep commands, offline image processing/updating
+            //TODO:When ran from inside windows PE, windows RE update/WIM capture, error reporting, 32-bit versions
             InitializeComponent();
         }
 
