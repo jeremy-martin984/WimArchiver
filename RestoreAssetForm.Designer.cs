@@ -31,8 +31,8 @@
             this.btnOK = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
             this.instAsset = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.txtAssetEntry = new System.Windows.Forms.TextBox();
+            this.btnBrowse = new System.Windows.Forms.Button();
             this.ReturnDirectory = new System.Windows.Forms.OpenFileDialog();
             this.SuspendLayout();
             // 
@@ -50,6 +50,7 @@
             // 
             // btnCancel
             // 
+            this.btnCancel.AccessibleRole = System.Windows.Forms.AccessibleRole.RadioButton;
             this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnCancel.Location = new System.Drawing.Point(586, 313);
             this.btnCancel.Name = "btnCancel";
@@ -68,26 +69,27 @@
             this.instAsset.TabIndex = 9;
             this.instAsset.Text = "Enter Asset Number:";
             // 
-            // textBox1
+            // txtAssetEntry
             // 
-            this.textBox1.Location = new System.Drawing.Point(160, 206);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(433, 31);
-            this.textBox1.TabIndex = 10;
+            this.txtAssetEntry.Location = new System.Drawing.Point(160, 206);
+            this.txtAssetEntry.Name = "txtAssetEntry";
+            this.txtAssetEntry.Size = new System.Drawing.Size(433, 31);
+            this.txtAssetEntry.TabIndex = 10;
             // 
-            // button1
+            // btnBrowse
             // 
-            this.button1.Location = new System.Drawing.Point(160, 313);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(105, 41);
-            this.button1.TabIndex = 11;
-            this.button1.Text = "Browse";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btnBrowse.Location = new System.Drawing.Point(160, 313);
+            this.btnBrowse.Name = "btnBrowse";
+            this.btnBrowse.Size = new System.Drawing.Size(105, 41);
+            this.btnBrowse.TabIndex = 11;
+            this.btnBrowse.Text = "Browse";
+            this.btnBrowse.UseVisualStyleBackColor = true;
+            this.btnBrowse.Click += new System.EventHandler(this.OnBtnBrowse);
             // 
             // ReturnDirectory
             // 
-            this.ReturnDirectory.Filter = "\"Full Flash Update|*.ffu\".";
+            this.ReturnDirectory.AutoUpgradeEnabled = false;
+            this.ReturnDirectory.InitialDirectory = "I:\\";
             this.ReturnDirectory.SupportMultiDottedExtensions = true;
             // 
             // RestoreAssetForm
@@ -95,13 +97,14 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.btnBrowse);
+            this.Controls.Add(this.txtAssetEntry);
             this.Controls.Add(this.instAsset);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnOK);
             this.Name = "RestoreAssetForm";
             this.Text = "RestoreAssetForm";
+            this.Load += new System.EventHandler(this.RestoreAssetForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -112,8 +115,8 @@
         private System.Windows.Forms.Button btnOK;
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Label instAsset;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TextBox txtAssetEntry;
+        private System.Windows.Forms.Button btnBrowse;
         internal System.Windows.Forms.OpenFileDialog ReturnDirectory;
     }
 }

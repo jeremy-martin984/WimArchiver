@@ -25,15 +25,16 @@ namespace WimArchiver
             //TODO:Display Confirmation
             var modelFFU = new WimSystemCommand();
             modelFFU.Model = txtModelEntry.Text;
-            modelFFU.FinalCommand = modelFFU.Base + modelFFU.Model + modelFFU.End + modelFFU.Model;
+            modelFFU.FinalCommand = modelFFU.Base + modelFFU.Model + modelFFU.End + "\"windows\"";
+            //MessageBox.Show(modelFFU.FinalCommand, "info", MessageBoxButtons.OK, MessageBoxIcon.Information); To see command output
             var FFUCreate = new ProcessStartInfo();
             FFUCreate.UseShellExecute = true;
-            FFUCreate.WorkingDirectory = @"C:\Windows\System32";
+            FFUCreate.WorkingDirectory = @"X:\Windows\System32";
             //TODO:Verify directory in startup environment
-            FFUCreate.FileName = @"C:\Windows\System32\cmd.exe";
+            FFUCreate.FileName = @"X:\Windows\System32\cmd.exe";
             FFUCreate.Verb = "runas";
-            FFUCreate.Arguments = "/k " + modelFFU.FinalCommand;
-            FFUCreate.WindowStyle = ProcessWindowStyle.Normal;
+            FFUCreate.Arguments = "/c " + modelFFU.FinalCommand;
+            FFUCreate.WindowStyle = ProcessWindowStyle.Maximized; //TODO:indication when it's done
             Process.Start(FFUCreate);
 
             Close();
