@@ -21,6 +21,7 @@ namespace WimArchiver
 
         private void OnOK(object sender, EventArgs e)
         {
+            /* This has been moved to WimSystemCommand
             //TODO:Display Confirmation
             var assetFFU = new WimSystemCommand();
             assetFFU.Asset = txtAssetEntry.Text;
@@ -35,6 +36,9 @@ namespace WimArchiver
             FFUCreate.Arguments = "/c " + assetFFU.FinalCommand;
             FFUCreate.WindowStyle = ProcessWindowStyle.Maximized; //TODO:indication when it's done
             Process.Start(FFUCreate);
+            */
+            var create = new WimSystemCommand();
+            create.AddAsset(txtAssetEntry.Text);
             Close();
         }
 

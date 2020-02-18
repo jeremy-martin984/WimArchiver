@@ -20,27 +20,28 @@ namespace WimArchiver
             
         }
 
+        private void DisplayConfirm(string message)
+        {
+            MessageBox.Show(message, "Confirm", MessageBoxButtons.YesNo);
+        }
         private void OnOK(object sender, EventArgs e)
         {
-            var modelFFU = new WimSystemCommand();
-            string temp = txtModelEntry.Text;
-            temp = temp.Replace(" ", "_");
-            temp = temp.Replace("/", "-");
-            temp = temp.ToUpper();
-            modelFFU.Model = temp;
-            //TODO:Name collision, replacement, true database implementation, text validation
-            //TODO:Warning messages,
             bool fileExists = false;
+            var modelFFU = new WimSystemCommand();
             string[] modelLine = System.IO.File.ReadAllLines("ModelList.txt");
-            if(Array.Exists(modelLine, element => element == temp))
+            if(modelFFU.CheckIfExists(modelLine, txtModelEntry.Text, out var message, out var temp))
             {
-                DialogResult result =MessageBox.Show("This model already exists. Do you want to overwrite?", "Image Exists", MessageBoxButtons.YesNo);
+                DialogResult result = MessageBox.Show(message, "Confirm", MessageBoxButtons.YesNo);
                 if (result == DialogResult.No)
-                {
                     return;
+                else
+                {
+                    fileExists = true;
+                    modelFFU.Model = temp;
+                    modelFFU.AddModel(modelFFU.Model);
                 }
-                else fileExists = true;
             }
+            modelFFU.Model = temp;
             if (!fileExists)
             {
                 using (System.IO.StreamWriter file = new System.IO.StreamWriter("ModelList.txt", true))
@@ -51,28 +52,14 @@ namespace WimArchiver
                 Array.Sort(modelLine);
 
                 System.IO.File.WriteAllLines("ModelList.txt", modelLine);
+                modelFFU.AddModel(modelFFU.Model);
             }
-        
-
-        modelFFU.FinalCommand = modelFFU.Base + modelFFU.Model + modelFFU.End + "\"windows\"";
-            //MessageBox.Show(modelFFU.FinalCommand, "info", MessageBoxButtons.OK, MessageBoxIcon.Information); To see command output
-            var FFUCreate = new ProcessStartInfo();
-            FFUCreate.UseShellExecute = true;
-            FFUCreate.WorkingDirectory = @"X:\Windows\System32";
-            //TODO:Verify directory in startup environment
-            FFUCreate.FileName = @"X:\Windows\System32\cmd.exe";
-            FFUCreate.Verb = "runas";
-            FFUCreate.Arguments = "/c " + modelFFU.FinalCommand;
-            FFUCreate.WindowStyle = ProcessWindowStyle.Maximized; //TODO:indication when it's done
-            Process.Start(FFUCreate);
-
             Close();
         }
 
         private void OnCancel(object sender, EventArgs e)
         {
             Close();
-            //TODO::Something
         }
     }
 }
