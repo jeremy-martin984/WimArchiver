@@ -18,7 +18,6 @@ namespace WimArchiver
         {
             InitializeComponent();
             modelBox.Items.AddRange(System.IO.File.ReadAllLines("ModelList.txt"));
-
         }
         
         private void OnOK(object sender, EventArgs e)
@@ -26,18 +25,7 @@ namespace WimArchiver
             //TODO:Model database
             //TODO:Display Confirmation
             var modelFFU = new WimSystemCommand();
-            modelFFU.Model = modelBox.Text;
-            modelFFU.FinalCommand = modelFFU.Base2 + modelFFU.Model + modelFFU.EndRestore;
-            //MessageBox.Show(modelFFU.FinalCommand, "info", MessageBoxButtons.OK, MessageBoxIcon.Information); To see command output
-            var FFUCreate = new ProcessStartInfo();
-            FFUCreate.UseShellExecute = true;
-            FFUCreate.WorkingDirectory = @"X:\Windows\System32";
-            //TODO:Verify directory in startup environment
-            FFUCreate.FileName = @"X:\Windows\System32\cmd.exe";
-            FFUCreate.Verb = "runas";
-            FFUCreate.Arguments = "/c " + modelFFU.FinalCommand;
-            FFUCreate.WindowStyle = ProcessWindowStyle.Maximized; //TODO:indication when it's done
-            Process.Start(FFUCreate);
+            modelFFU.RestoreModel(modelBox.Text);
 
             Close();
             //TODO:Something, database query to pre-fill model names

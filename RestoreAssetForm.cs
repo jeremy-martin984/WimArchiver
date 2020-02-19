@@ -23,7 +23,7 @@ namespace WimArchiver
         private void OnOK(object sender, EventArgs e)
         {
             string temp = txtAssetEntry.Text;
-            bool success = Int32.TryParse(temp, out int assetTest);
+            bool success = Int32.TryParse(temp, out _);
             if(!success)
             {
                 MessageBox.Show("This method is for restoring specific assets and is not suitable for generic images. Please select a different image", "Warning", MessageBoxButtons.OK);
@@ -31,20 +31,8 @@ namespace WimArchiver
             }
             else
             {
-                var assetFFU = new WimSystemCommand
-                {
-                    Asset = txtAssetEntry.Text
-                };
-                assetFFU.FinalCommand = assetFFU.Base2 + assetFFU.Asset + assetFFU.EndRestore;
-                //MessageBox.Show(assetFFU.FinalCommand, "info", MessageBoxButtons.OK, MessageBoxIcon.Information); //To see command output
-                var FFUCreate = new ProcessStartInfo();
-                FFUCreate.UseShellExecute = true;
-                FFUCreate.WorkingDirectory = @"X:\Windows\System32";
-                FFUCreate.FileName = @"X:\Windows\System32\cmd.exe";
-                FFUCreate.Verb = "runas";
-                FFUCreate.Arguments = "/c " + assetFFU.FinalCommand;
-                FFUCreate.WindowStyle = ProcessWindowStyle.Maximized; //TODO:indication when it's done
-                Process.Start(FFUCreate);
+                var asset = new WimSystemCommand();
+                asset.RestoreAsset(txtAssetEntry.Text);
                 Close();
             }
             //TODO:Fix browse button, display confirmations.
@@ -61,8 +49,7 @@ namespace WimArchiver
             ReturnDirectory.ShowDialog();
             temp = ReturnDirectory.SafeFileName;
             temp = temp.Remove(7);
-            int assetTest;
-            bool success = Int32.TryParse(temp, out assetTest);
+            bool success = Int32.TryParse(temp, out _);
             if (success)
             {
                 txtAssetEntry.Text = temp;

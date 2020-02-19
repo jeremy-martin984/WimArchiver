@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WimArchiver", "WimArchiver.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WimArchiver.Commands", "..\WimArchiver.Commands\WimArchiver.Commands.csproj", "{1B88C9E5-E236-4799-8AA2-7FD69509B37E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WimArchiver.Sysprep", "..\WimArchiver.Sysprep\WimArchiver.Sysprep.csproj", "{0D46EC35-E860-4447-B161-A8341DF4EDC7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -31,6 +33,14 @@ Global
 		{1B88C9E5-E236-4799-8AA2-7FD69509B37E}.Release|Any CPU.Build.0 = Release|Any CPU
 		{1B88C9E5-E236-4799-8AA2-7FD69509B37E}.Release|x64.ActiveCfg = Release|Any CPU
 		{1B88C9E5-E236-4799-8AA2-7FD69509B37E}.Release|x64.Build.0 = Release|Any CPU
+		{0D46EC35-E860-4447-B161-A8341DF4EDC7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0D46EC35-E860-4447-B161-A8341DF4EDC7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0D46EC35-E860-4447-B161-A8341DF4EDC7}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{0D46EC35-E860-4447-B161-A8341DF4EDC7}.Debug|x64.Build.0 = Debug|Any CPU
+		{0D46EC35-E860-4447-B161-A8341DF4EDC7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0D46EC35-E860-4447-B161-A8341DF4EDC7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0D46EC35-E860-4447-B161-A8341DF4EDC7}.Release|x64.ActiveCfg = Release|Any CPU
+		{0D46EC35-E860-4447-B161-A8341DF4EDC7}.Release|x64.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

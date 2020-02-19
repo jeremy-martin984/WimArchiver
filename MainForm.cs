@@ -58,5 +58,17 @@ namespace WimArchiver
             RestoreModelForm model = new RestoreModelForm();
             model.ShowDialog(this);
         }
+
+        private void AuditMode(object sender, EventArgs e)
+        {
+            AuditForm auditForm = new AuditForm();
+            auditForm.ShowDialog(this);
+        }
+
+        private void OOBEMode(object sender, EventArgs e)
+        {
+            OOBEForm OOBE = new OOBEForm();
+            OOBE.ShowDialog(this);
+        }
     }
 }

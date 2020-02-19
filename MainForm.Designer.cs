@@ -37,6 +37,9 @@
             this.fromAssetToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.fromModelImageToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.sysPrepToolsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.enterAuditModeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.outOfBoxModeOOBEToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.manualToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -48,13 +51,15 @@
             // 
             // menuStrip1
             // 
+            this.menuStrip1.GripMargin = new System.Windows.Forms.Padding(2, 2, 0, 2);
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(32, 32);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.fileToolStripMenuItem,
+            this.sysPrepToolsToolStripMenuItem,
             this.helpToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(974, 48);
+            this.menuStrip1.Size = new System.Drawing.Size(974, 42);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -65,7 +70,7 @@
             this.restoreToolStripMenuItem,
             this.exitToolStripMenuItem});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-            this.fileToolStripMenuItem.Size = new System.Drawing.Size(72, 44);
+            this.fileToolStripMenuItem.Size = new System.Drawing.Size(72, 38);
             this.fileToolStripMenuItem.Text = "&File";
             // 
             // newToolStripMenuItem
@@ -122,13 +127,36 @@
             this.exitToolStripMenuItem.Text = "&Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.OnExit);
             // 
+            // sysPrepToolsToolStripMenuItem
+            // 
+            this.sysPrepToolsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.enterAuditModeToolStripMenuItem,
+            this.outOfBoxModeOOBEToolStripMenuItem});
+            this.sysPrepToolsToolStripMenuItem.Name = "sysPrepToolsToolStripMenuItem";
+            this.sysPrepToolsToolStripMenuItem.Size = new System.Drawing.Size(245, 38);
+            this.sysPrepToolsToolStripMenuItem.Text = "SysPrep Commands";
+            // 
+            // enterAuditModeToolStripMenuItem
+            // 
+            this.enterAuditModeToolStripMenuItem.Name = "enterAuditModeToolStripMenuItem";
+            this.enterAuditModeToolStripMenuItem.Size = new System.Drawing.Size(417, 44);
+            this.enterAuditModeToolStripMenuItem.Text = "Audit Mode";
+            this.enterAuditModeToolStripMenuItem.Click += new System.EventHandler(this.AuditMode);
+            // 
+            // outOfBoxModeOOBEToolStripMenuItem
+            // 
+            this.outOfBoxModeOOBEToolStripMenuItem.Name = "outOfBoxModeOOBEToolStripMenuItem";
+            this.outOfBoxModeOOBEToolStripMenuItem.Size = new System.Drawing.Size(417, 44);
+            this.outOfBoxModeOOBEToolStripMenuItem.Text = "Out of Box Mode (OOBE)";
+            this.outOfBoxModeOOBEToolStripMenuItem.Click += new System.EventHandler(this.OOBEMode);
+            // 
             // helpToolStripMenuItem
             // 
             this.helpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.aboutToolStripMenuItem,
             this.manualToolStripMenuItem});
             this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
-            this.helpToolStripMenuItem.Size = new System.Drawing.Size(85, 44);
+            this.helpToolStripMenuItem.Size = new System.Drawing.Size(85, 38);
             this.helpToolStripMenuItem.Text = "&Help";
             // 
             // aboutToolStripMenuItem
@@ -208,6 +236,9 @@
         private System.Windows.Forms.Label instAsset;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.ToolStripMenuItem sysPrepToolsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem enterAuditModeToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem outOfBoxModeOOBEToolStripMenuItem;
     }
 }
 

@@ -80,11 +80,23 @@
     <Compile Include="AddModelForm.Designer.cs">
       <DependentUpon>AddModelForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="AuditForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AuditForm.Designer.cs">
+      <DependentUpon>AuditForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OOBEForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OOBEForm.Designer.cs">
+      <DependentUpon>OOBEForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -106,8 +118,14 @@
     <EmbeddedResource Include="AddModelForm.resx">
       <DependentUpon>AddModelForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="AuditForm.resx">
+      <DependentUpon>AuditForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OOBEForm.resx">
+      <DependentUpon>OOBEForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -145,6 +163,10 @@
     <ProjectReference Include="..\WimArchiver.Commands\WimArchiver.Commands.csproj">
       <Project>{1b88c9e5-e236-4799-8aa2-7fd69509b37e}</Project>
       <Name>WimArchiver.Commands</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WimArchiver.Sysprep\WimArchiver.Sysprep.csproj">
+      <Project>{0d46ec35-e860-4447-b161-a8341df4edc7}</Project>
+      <Name>WimArchiver.Sysprep</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
