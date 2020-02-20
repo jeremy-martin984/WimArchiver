@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using WimArchiver.Sysprep;
+using WimArchiver.Command;
 
 
 namespace WimArchiver
@@ -26,7 +26,7 @@ namespace WimArchiver
 
         private void OnOK(object sender, EventArgs e)
         {
-            var sysPrep = new WimArchiver.Sysprep.PrepCommand();
+            var sysPrep = new PrepCommand();
             sysPrep.AuditMode();
             Close();
 

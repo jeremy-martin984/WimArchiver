@@ -31,7 +31,7 @@ namespace WimArchiver
             }
             else
             {
-                var asset = new WimSystemCommand();
+                var asset = new CaptureCommand();
                 asset.RestoreAsset(txtAssetEntry.Text);
                 Close();
             }

@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WimArchiver.Command;
 
 namespace WimArchiver
 {
@@ -69,6 +70,36 @@ namespace WimArchiver
         {
             OOBEForm OOBE = new OOBEForm();
             OOBE.ShowDialog(this);
+        }
+
+        private void DriveMap(object sender, EventArgs e)
+        {
+            var netStart = new NetStart();
+            netStart.CheckForIDrive(out string error);
+            if (error != null)
+            {
+                MessageBox.Show(error, "Drive not Mapped", MessageBoxButtons.OK);
+                Backup.Enabled = false;
+                Restore.Enabled = false;
+            }
+            else
+            {
+                Backup.Enabled = true;
+                Restore.Enabled = true;
+            }
+
+        }
+
+        private void file_Click(object sender, EventArgs e)
+        {
+            var netStart = new NetStart();
+            netStart.CheckForIDrive(out string error);
+            if (error != null)
+            {
+                //MessageBox.Show(error, "Drive not Mapped", MessageBoxButtons.OK);
+                Backup.Enabled = false;
+                Restore.Enabled = false;
+            }
         }
     }
 }

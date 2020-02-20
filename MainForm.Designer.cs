@@ -29,17 +29,19 @@
         private void InitializeComponent()
         {
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.newToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.file = new System.Windows.Forms.ToolStripMenuItem();
+            this.Backup = new System.Windows.Forms.ToolStripMenuItem();
             this.assetBackupToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.modelBackupToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.restoreToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.Restore = new System.Windows.Forms.ToolStripMenuItem();
             this.fromAssetToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.fromModelImageToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sysPrepToolsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.enterAuditModeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.outOfBoxModeOOBEToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.utilitiesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.driveMapToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.manualToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -54,8 +56,9 @@
             this.menuStrip1.GripMargin = new System.Windows.Forms.Padding(2, 2, 0, 2);
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(32, 32);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.fileToolStripMenuItem,
+            this.file,
             this.sysPrepToolsToolStripMenuItem,
+            this.utilitiesToolStripMenuItem,
             this.helpToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
@@ -63,59 +66,60 @@
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
-            // fileToolStripMenuItem
+            // file
             // 
-            this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.newToolStripMenuItem,
-            this.restoreToolStripMenuItem,
+            this.file.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.Backup,
+            this.Restore,
             this.exitToolStripMenuItem});
-            this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-            this.fileToolStripMenuItem.Size = new System.Drawing.Size(72, 38);
-            this.fileToolStripMenuItem.Text = "&File";
+            this.file.Name = "file";
+            this.file.Size = new System.Drawing.Size(72, 38);
+            this.file.Text = "&File";
+            this.file.Click += new System.EventHandler(this.file_Click);
             // 
-            // newToolStripMenuItem
+            // Backup
             // 
-            this.newToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.Backup.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.assetBackupToolStripMenuItem,
             this.modelBackupToolStripMenuItem});
-            this.newToolStripMenuItem.Name = "newToolStripMenuItem";
-            this.newToolStripMenuItem.Size = new System.Drawing.Size(271, 44);
-            this.newToolStripMenuItem.Text = "&Backup";
+            this.Backup.Name = "Backup";
+            this.Backup.Size = new System.Drawing.Size(359, 44);
+            this.Backup.Text = "&Backup";
             // 
             // assetBackupToolStripMenuItem
             // 
             this.assetBackupToolStripMenuItem.Name = "assetBackupToolStripMenuItem";
-            this.assetBackupToolStripMenuItem.Size = new System.Drawing.Size(302, 44);
+            this.assetBackupToolStripMenuItem.Size = new System.Drawing.Size(359, 44);
             this.assetBackupToolStripMenuItem.Text = "&Asset Backup";
             this.assetBackupToolStripMenuItem.Click += new System.EventHandler(this.AddAsset);
             // 
             // modelBackupToolStripMenuItem
             // 
             this.modelBackupToolStripMenuItem.Name = "modelBackupToolStripMenuItem";
-            this.modelBackupToolStripMenuItem.Size = new System.Drawing.Size(302, 44);
+            this.modelBackupToolStripMenuItem.Size = new System.Drawing.Size(359, 44);
             this.modelBackupToolStripMenuItem.Text = "&Model Backup";
             this.modelBackupToolStripMenuItem.Click += new System.EventHandler(this.AddModel);
             // 
-            // restoreToolStripMenuItem
+            // Restore
             // 
-            this.restoreToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.Restore.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.fromAssetToolStripMenuItem,
             this.fromModelImageToolStripMenuItem});
-            this.restoreToolStripMenuItem.Name = "restoreToolStripMenuItem";
-            this.restoreToolStripMenuItem.Size = new System.Drawing.Size(271, 44);
-            this.restoreToolStripMenuItem.Text = "&Restore";
+            this.Restore.Name = "Restore";
+            this.Restore.Size = new System.Drawing.Size(359, 44);
+            this.Restore.Text = "&Restore";
             // 
             // fromAssetToolStripMenuItem
             // 
             this.fromAssetToolStripMenuItem.Name = "fromAssetToolStripMenuItem";
-            this.fromAssetToolStripMenuItem.Size = new System.Drawing.Size(353, 44);
+            this.fromAssetToolStripMenuItem.Size = new System.Drawing.Size(359, 44);
             this.fromAssetToolStripMenuItem.Text = "&From Asset Image";
             this.fromAssetToolStripMenuItem.Click += new System.EventHandler(this.RestoreAsset);
             // 
             // fromModelImageToolStripMenuItem
             // 
             this.fromModelImageToolStripMenuItem.Name = "fromModelImageToolStripMenuItem";
-            this.fromModelImageToolStripMenuItem.Size = new System.Drawing.Size(353, 44);
+            this.fromModelImageToolStripMenuItem.Size = new System.Drawing.Size(359, 44);
             this.fromModelImageToolStripMenuItem.Text = "&From Model Image";
             this.fromModelImageToolStripMenuItem.Click += new System.EventHandler(this.RestoreModel);
             // 
@@ -123,7 +127,7 @@
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
             this.exitToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.F4)));
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(271, 44);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(359, 44);
             this.exitToolStripMenuItem.Text = "&Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.OnExit);
             // 
@@ -149,6 +153,21 @@
             this.outOfBoxModeOOBEToolStripMenuItem.Size = new System.Drawing.Size(417, 44);
             this.outOfBoxModeOOBEToolStripMenuItem.Text = "Out of Box Mode (OOBE)";
             this.outOfBoxModeOOBEToolStripMenuItem.Click += new System.EventHandler(this.OOBEMode);
+            // 
+            // utilitiesToolStripMenuItem
+            // 
+            this.utilitiesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.driveMapToolStripMenuItem});
+            this.utilitiesToolStripMenuItem.Name = "utilitiesToolStripMenuItem";
+            this.utilitiesToolStripMenuItem.Size = new System.Drawing.Size(114, 38);
+            this.utilitiesToolStripMenuItem.Text = "Utilities";
+            // 
+            // driveMapToolStripMenuItem
+            // 
+            this.driveMapToolStripMenuItem.Name = "driveMapToolStripMenuItem";
+            this.driveMapToolStripMenuItem.Size = new System.Drawing.Size(359, 44);
+            this.driveMapToolStripMenuItem.Text = "Drive Map";
+            this.driveMapToolStripMenuItem.Click += new System.EventHandler(this.DriveMap);
             // 
             // helpToolStripMenuItem
             // 
@@ -212,6 +231,7 @@
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "MainForm";
             this.Text = "WimArchiver";
+            this.Load += new System.EventHandler(this.DriveMap);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -222,11 +242,11 @@
         #endregion
 
         private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem newToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem file;
+        private System.Windows.Forms.ToolStripMenuItem Backup;
         private System.Windows.Forms.ToolStripMenuItem assetBackupToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem modelBackupToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem restoreToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem Restore;
         private System.Windows.Forms.ToolStripMenuItem fromAssetToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem fromModelImageToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
@@ -239,6 +259,8 @@
         private System.Windows.Forms.ToolStripMenuItem sysPrepToolsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem enterAuditModeToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem outOfBoxModeOOBEToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem utilitiesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem driveMapToolStripMenuItem;
     }
 }
 

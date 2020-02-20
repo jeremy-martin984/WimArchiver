@@ -37,8 +37,9 @@ namespace WimArchiver
             FFUCreate.WindowStyle = ProcessWindowStyle.Maximized; //TODO:indication when it's done
             Process.Start(FFUCreate);
             */
-            var create = new WimSystemCommand();
+            var create = new CaptureCommand();
             create.AddAsset(txtAssetEntry.Text);
+
             Close();
         }
 

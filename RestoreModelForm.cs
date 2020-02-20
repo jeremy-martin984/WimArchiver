@@ -24,7 +24,7 @@ namespace WimArchiver
         {
             //TODO:Model database
             //TODO:Display Confirmation
-            var modelFFU = new WimSystemCommand();
+            var modelFFU = new CaptureCommand();
             modelFFU.RestoreModel(modelBox.Text);
 
             Close();

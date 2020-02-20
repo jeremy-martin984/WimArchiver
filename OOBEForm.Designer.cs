@@ -48,6 +48,7 @@
             // 
             // btnBrowse
             // 
+            this.btnBrowse.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnBrowse.Location = new System.Drawing.Point(71, 413);
             this.btnBrowse.Name = "btnBrowse";
             this.btnBrowse.Size = new System.Drawing.Size(105, 41);
@@ -152,8 +153,10 @@
             // 
             // OOBEForm
             // 
+            this.AcceptButton = this.btnOK;
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.CancelButton = this.btnCancel;
             this.ClientSize = new System.Drawing.Size(926, 542);
             this.Controls.Add(this.txtUnattendDIR);
             this.Controls.Add(this.label7);
@@ -166,6 +169,7 @@
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnOK);
             this.Controls.Add(this.btnBrowse);
+            this.KeyPreview = true;
             this.Name = "OOBEForm";
             this.Text = "Enter Out Of Box Experience";
             this.ResumeLayout(false);

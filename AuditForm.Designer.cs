@@ -98,8 +98,10 @@
             // 
             // AuditForm
             // 
+            this.AcceptButton = this.btnOK;
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.CancelButton = this.btnCancel;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -107,6 +109,7 @@
             this.Controls.Add(this.instAsset);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnOK);
+            this.KeyPreview = true;
             this.Name = "AuditForm";
             this.Text = "AuditForm";
             this.ResumeLayout(false);

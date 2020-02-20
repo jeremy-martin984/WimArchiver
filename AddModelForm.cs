@@ -19,15 +19,17 @@ namespace WimArchiver
             InitializeComponent();
             
         }
-
+        /*
         private void DisplayConfirm(string message)
         {
             MessageBox.Show(message, "Confirm", MessageBoxButtons.YesNo);
         }
+        */
         private void OnOK(object sender, EventArgs e)
         {
+            
             bool fileExists = false;
-            var modelFFU = new WimSystemCommand();
+            var modelFFU = new CaptureCommand();
             string[] modelLine = System.IO.File.ReadAllLines("ModelList.txt");
             if(modelFFU.CheckIfExists(modelLine, txtModelEntry.Text, out var message, out var temp))
             {
@@ -37,11 +39,9 @@ namespace WimArchiver
                 else
                 {
                     fileExists = true;
-                    modelFFU.Model = temp;
-                    modelFFU.AddModel(modelFFU.Model);
+                    modelFFU.AddModel(temp);
                 }
             }
-            modelFFU.Model = temp;
             if (!fileExists)
             {
                 using (System.IO.StreamWriter file = new System.IO.StreamWriter("ModelList.txt", true))
@@ -52,7 +52,7 @@ namespace WimArchiver
                 Array.Sort(modelLine);
 
                 System.IO.File.WriteAllLines("ModelList.txt", modelLine);
-                modelFFU.AddModel(modelFFU.Model);
+                modelFFU.AddModel(temp);
             }
             Close();
         }
