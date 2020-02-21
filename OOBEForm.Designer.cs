@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.findUnattend = new System.Windows.Forms.OpenFileDialog();
+            this.FindUnattend = new System.Windows.Forms.OpenFileDialog();
             this.btnBrowse = new System.Windows.Forms.Button();
             this.btnOK = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
@@ -42,13 +42,14 @@
             this.txtUnattendDIR = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
-            // findUnattend
+            // FindUnattend
             // 
-            this.findUnattend.FileName = "openFileDialog1";
+            this.FindUnattend.AutoUpgradeEnabled = false;
+            this.FindUnattend.FileName = "unattend.xml";
+            this.FindUnattend.InitialDirectory = "C:\\windows\\Panther";
             // 
             // btnBrowse
             // 
-            this.btnBrowse.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnBrowse.Location = new System.Drawing.Point(71, 413);
             this.btnBrowse.Name = "btnBrowse";
             this.btnBrowse.Size = new System.Drawing.Size(105, 41);
@@ -179,7 +180,7 @@
 
         #endregion
 
-        private System.Windows.Forms.OpenFileDialog findUnattend;
+        private System.Windows.Forms.OpenFileDialog FindUnattend;
         private System.Windows.Forms.Button btnBrowse;
         private System.Windows.Forms.Button btnOK;
         private System.Windows.Forms.Button btnCancel;

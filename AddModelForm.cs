@@ -30,7 +30,7 @@ namespace WimArchiver
             
             bool fileExists = false;
             var modelFFU = new CaptureCommand();
-            string[] modelLine = System.IO.File.ReadAllLines("ModelList.txt");
+            string[] modelLine = System.IO.File.ReadAllLines("I:\\images\\ModelList.txt");
             if(modelFFU.CheckIfExists(modelLine, txtModelEntry.Text, out var message, out var temp))
             {
                 DialogResult result = MessageBox.Show(message, "Confirm", MessageBoxButtons.YesNo);
@@ -44,15 +44,25 @@ namespace WimArchiver
             }
             if (!fileExists)
             {
-                using (System.IO.StreamWriter file = new System.IO.StreamWriter("ModelList.txt", true))
+                using (System.IO.StreamWriter file = new System.IO.StreamWriter("I:\\images\\ModelList.txt", true))
                 {
                     file.WriteLine(temp);
                 }
-                modelLine = System.IO.File.ReadAllLines("ModelList.txt");
+                using (System.IO.StreamWriter fileStar = new System.IO.StreamWriter("I:\\images\\ModelListStar.txt", true))
+                {
+                    
+                    fileStar.WriteLine(modelFFU.StarSafe(temp));
+                }
+                modelLine = System.IO.File.ReadAllLines("I:\\images\\ModelList.txt");
                 Array.Sort(modelLine);
 
-                System.IO.File.WriteAllLines("ModelList.txt", modelLine);
+                System.IO.File.WriteAllLines("I:\\images\\ModelList.txt", modelLine);
                 modelFFU.AddModel(temp);
+
+                modelLine = System.IO.File.ReadAllLines("I:\\images\\ModelListStar.txt");
+                Array.Sort(modelLine);
+
+                System.IO.File.WriteAllLines("I:\\images\\ModelListStar.txt", modelLine);
             }
             Close();
         }

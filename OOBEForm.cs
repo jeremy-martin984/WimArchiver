@@ -20,11 +20,13 @@ namespace WimArchiver
 
         private void OnOK(object sender, EventArgs e)
         {
+            
             var oobeCMD = new PrepCommand();
             if (txtUnattendDIR.Text == "")
                 oobeCMD.OOBE("");
             else
             oobeCMD.OOBE(" /unattend:" + txtUnattendDIR.Text);
+            
         }
 
         private void OnCancel(object sender, EventArgs e)
@@ -34,8 +36,9 @@ namespace WimArchiver
 
         private void UnattendBrowse(object sender, EventArgs e)
         {
-            findUnattend.ShowDialog();
-            txtUnattendDIR.Text = findUnattend.FileName;//TODO:file restrictions, input validation
+            FindUnattend.ShowDialog();
+            string temp = FindUnattend.FileName;
+            txtUnattendDIR.Text = temp;
         }
     }
 }

@@ -90,7 +90,7 @@ namespace WimArchiver
 
         }
 
-        private void file_Click(object sender, EventArgs e)
+        private void OnFileClick(object sender, EventArgs e)
         {
             var netStart = new NetStart();
             netStart.CheckForIDrive(out string error);

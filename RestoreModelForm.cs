@@ -17,7 +17,8 @@ namespace WimArchiver
         public RestoreModelForm()
         {
             InitializeComponent();
-            modelBox.Items.AddRange(System.IO.File.ReadAllLines("ModelList.txt"));
+            //string[] starName = System.IO.File.ReadAllLines("I:\\images\\ModelList.txt");
+            modelBox.Items.AddRange(System.IO.File.ReadAllLines("I:\\images\\ModelListStar.txt"));
         }
         
         private void OnOK(object sender, EventArgs e)
@@ -25,7 +26,8 @@ namespace WimArchiver
             //TODO:Model database
             //TODO:Display Confirmation
             var modelFFU = new CaptureCommand();
-            modelFFU.RestoreModel(modelBox.Text);
+            MessageBox.Show(modelFFU.DISMSafe(modelBox.Text));
+            modelFFU.RestoreModel(modelFFU.DISMSafe(modelBox.Text));
 
             Close();
             //TODO:Something, database query to pre-fill model names

@@ -75,7 +75,7 @@
             this.file.Name = "file";
             this.file.Size = new System.Drawing.Size(72, 38);
             this.file.Text = "&File";
-            this.file.Click += new System.EventHandler(this.file_Click);
+            this.file.Click += new System.EventHandler(this.OnFileClick);
             // 
             // Backup
             // 
